@@ -1,0 +1,90 @@
+.select-wrapper input.select-dropdown,
+.select-wrapper input.select-dropdown:focus {
+  border: none;
+  margin: 0;
+  color: #fff;
+}
+
+.datepicker-calendar input.select-dropdown {
+  color: #000;
+}
+
+.select-wrapper .caret {
+  fill: #fff;
+}
+
+.currency {
+  width: 10rem;
+  margin-top: 0.75rem;
+}
+
+.brand-logo .material-icons.large {
+  font-size: 4rem;
+}
+
+.card.darken-1 input.autocomplete,
+.card.darken-1 label.active,
+input.datepicker {
+  color: #fff;
+}
+
+.airline-logo img {
+  margin: 1.0933333333rem 0 0.656rem 0;
+}
+
+.card-title.airline-title .row,
+.card-title.airline-title h4 {
+  margin: 0;
+}
+
+.ticket-price {
+  padding: 0.6rem;
+}
+
+ul.flight-details li {
+  float: left;
+  padding: 0.33rem 0.5rem 0.33rem 0;
+  line-height: 1.6rem;
+}
+ul.flight-details li span {
+  border-bottom: 1px dashed gray;
+}
+ul.flight-details li i.material-icons {
+  float: left;
+  margin-right: 0.5rem;
+}
+
+#loader.progress {
+  margin: 0;
+}
+
+#loader.progress .indeterminate {
+  background-color: rgb(173, 58, 58);
+}
+
+#favorite-tickets .add-to-favorite-icon {
+  display: none;
+}
+
+#aviatikets-search-result .remove-from-favorite-icon {
+  display: none;
+}
+
+.favorites {
+  padding: 0 0 0 2rem;
+}
+
+.favorites i {
+  cursor: pointer;
+}
+
+@media screen and (min-width:601px) {
+  .sidenav {
+    width: 450px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .sidenav {
+    width: 320px;
+  }
+}
