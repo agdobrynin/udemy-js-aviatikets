@@ -1,3 +1,6 @@
+import AirlineDto from "@/Dto/AirlineDto";
+import CityDto from "@/Dto/CityDto";
+
 export default class FlightCardDto {
     /**
      * @param {object} objFlight
@@ -11,11 +14,20 @@ export default class FlightCardDto {
         this.price = objFlight.price;
         this.transfers = objFlight.transfers;
         this.currency = currency;
-        /**
-         * @type {AirlineDto}
-         */
+
+        if(!(airlineDto instanceof AirlineDto)) {
+            throw new Error("Переданный параметр \"Авиакомпания\" не является AirlineDto");
+        }
         this._airline = airlineDto;
+
+        if(!(departureCityDto instanceof CityDto)) {
+            throw new Error("Переданный параметр \"Город отправления\" не является CityDto");
+        }
         this._cityDeparture = departureCityDto;
+
+        if(!(destinationCityDto instanceof CityDto)) {
+            throw new Error("Переданный параметр \"Город назначения\" не является CityDto");
+        }
         this._cityDestination = destinationCityDto;
 
         this._dateDepartureAt = new Date(objFlight?.departure_at || objFlight?._dateDepartureAt || "");
