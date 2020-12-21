@@ -3,7 +3,7 @@
 https://www.udemy.com/course/modern-javascript-from-beginning/
 
 
-[Live demo](dist/)
+[Live demo](https://agdobrynin.github.io/udemy-js-aviatikets/dist/)
 
 ## Installation
 ```
