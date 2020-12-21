@@ -2,7 +2,8 @@
 
 https://www.udemy.com/course/modern-javascript-from-beginning/
 
-* Endpoint: https://aviasales-api.herokuapp.com
+
+[Live demo](dist/)
 
 ## Installation
 ```
