@@ -15,6 +15,11 @@ npm install
 npm run dev
 ```
 
+### Run test
+```
+npm run test
+```
+
 ### Build for production mode
 ```
 npm run build
