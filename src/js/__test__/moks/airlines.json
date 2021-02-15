@@ -26,5 +26,12 @@
     "name_translations": {
       "en": "Aeroflot"
     }
+  },
+  {
+    "name": "Utair",
+    "code": "UT",
+    "name_translations": {
+      "en": "Utair"
+    }
   }
 ]
