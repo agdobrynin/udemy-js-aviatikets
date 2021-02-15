@@ -1,6 +1,6 @@
 import LocationStore, {LocationStore as LocationStoreClass} from "@/store/LocationStore";
-import Cache from "@/sevices/Cache";
-import Api from "@/sevices/Api";
+import Cache from "@/services/Cache";
+import Api from "@/services/Api";
 import cities from "@/__test__/moks/cities.json";
 import countries from "@/__test__/moks/countries.json";
 import airlines from "@/__test__/moks/airlines.json";

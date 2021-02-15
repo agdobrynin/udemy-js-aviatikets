@@ -7,7 +7,7 @@ import TicketsRequestDto from "@/Dto/TicketsRequestDto";
 import FlightCardsUI from "@/views/FlightCardsUI";
 import config from "@/config";
 import CurrenciesStore from "@/store/CurrenciesStore";
-import Cache from "@/sevices/Cache";
+import Cache from "@/services/Cache";
 import FavoritesStore from "@/store/FavoritesStore";
 import FavoriteUI from "@/views/FavoriteUI";
 
