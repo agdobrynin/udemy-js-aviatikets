@@ -8,7 +8,7 @@ export default class CityDto {
     }
 
     setCountryName(countryName) {
-        this.countryName = countryName || "Страна неизвестна";
+        this.countryName = countryName;
     }
 
     getFullName() {
