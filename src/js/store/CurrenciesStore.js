@@ -1,3 +1,9 @@
+export const currenciesCode = {
+    USD: "Доллар США",
+    EUR: "Евро",
+    RUB: "Рубль",
+};
+
 export default class CurrenciesStore {
     /**
      * @param {Object} config
@@ -5,11 +11,7 @@ export default class CurrenciesStore {
      * @param {Cache} cache
      */
     constructor(config, selectElement, cache) {
-        this.code = {
-            USD: "Доллар США",
-            EUR: "Евро",
-            RUB: "Рубль",
-        };
+        this.code = currenciesCode;
         this._locale = config.locale || "ru-RU";
         this._cache = cache;
 
