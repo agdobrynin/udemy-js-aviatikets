@@ -4,6 +4,7 @@ import Api from "@/services/Api";
 import cities from "@/__test__/moks/cities.json";
 import countries from "@/__test__/moks/countries.json";
 import airlines from "@/__test__/moks/airlines.json";
+import pricesCheap from "@/__test__/moks/prices.cheap.json";
 import CountryDto from "@/Dto/CountryDto";
 import CityDto from "@/Dto/CityDto";
 import AirlineDto from "@/Dto/AirlineDto";
@@ -57,31 +58,39 @@ describe("Test LocationStore class base function", () => {
     });
 });
 
-describe("Test async init method", () => {
+describe("Test async method", () => {
     const api = {
         cities: ()  => Promise.resolve(cities),
         countries: () => Promise.resolve(countries),
         airlines: () => Promise.resolve(airlines),
     };
 
-    const store = new LocationStoreClass(api);
+    let store;
 
-    it("compare result DTOs", async ()=> {
+    beforeEach(async () => {
+        store = new LocationStoreClass(api);
         await store.init();
 
+    });
+
+    it("Result DTO Country", async ()=> {
         const countryRu = store.getCountries()["RU"];
 
         expect(countryRu.code).toBe("RU");
         expect(countryRu.name).toBe("Россия");
         expect(countryRu.nameEn).toBe("Russia");
+    });
 
+    it("Result DTO City", async ()=> {
         const cityDto = store.getCities()["KUF"];
 
         expect(cityDto.getFullName()).toBe(`${cityDto.name}, ${cityDto.countryName}`);
         expect(cityDto.code).toBe("KUF");
         expect(cityDto.name).toBe("Самара");
         expect(cityDto.countryName).toBe("Россия");
+    });
 
+    it("Result DTO Airline", async ()=> {
         const airlineDto = store.getAirlines()["SU"];
 
         expect(airlineDto.code).toBe("SU");
@@ -89,4 +98,10 @@ describe("Test async init method", () => {
         expect(airlineDto.nameEn).toBe("Aeroflot");
         expect(airlineDto.getLogoUrl()).toEqual(expect.stringMatching(/\/100\/100\/SU\.png$/));
     });
-})
+
+    it("Test async method fetchTickets and result DTO FlightCardDto", async ()=> {
+        // TODO описать ответ от API в json.
+        console.log("origin=KUF&destination=PRG&depart_date=2021-02&return_date=2021-02&currency=USD");
+        console.log(pricesCheap);
+    });
+});
