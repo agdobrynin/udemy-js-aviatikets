@@ -1,23 +1,23 @@
 [
   {
-    "country_code": "ID",
-    "code": "JKT",
+    "country_code": "AZ",
+    "code": "BAK",
     "coordinates": {
-      "lat": -6.211544,
-      "lon": 106.845172
+      "lat": 40.4349504,
+      "lon": 49.8676232
     },
-    "name": "Джакарта",
-    "time_zone": "Asia/Jakarta",
+    "name": "Баку",
+    "time_zone": "Asia/Baku",
     "name_translations": {
-      "en": "Jakarta"
+      "en": "Baku"
     },
     "cases": {
-      "da": "Джакарте",
-      "pr": "Джакарте",
-      "ro": "Джакарты",
-      "su": "Джакарта",
-      "tv": "Джакартой",
-      "vi": "в Джакарту"
+      "da": "Баку",
+      "pr": "Баку",
+      "ro": "Баку",
+      "su": "Баку",
+      "tv": "Баку",
+      "vi": "в Баку"
     }
   }
 ]
