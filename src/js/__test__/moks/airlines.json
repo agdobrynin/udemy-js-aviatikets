@@ -19,5 +19,12 @@
     "name_translations": {
       "en": "Air Iceland"
     }
+  },
+  {
+    "name": "Аэрофлот",
+    "code": "SU",
+    "name_translations": {
+      "en": "Aeroflot"
+    }
   }
 ]

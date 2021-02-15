@@ -19,5 +19,26 @@
       "tv": "Баку",
       "vi": "в Баку"
     }
+  },
+  {
+    "country_code": "RU",
+    "code": "KUF",
+    "coordinates": {
+      "lat": 53.50782,
+      "lon": 50.14742
+    },
+    "name": "Самара",
+    "time_zone": "Europe/Samara",
+    "name_translations": {
+      "en": "Samara"
+    },
+    "cases": {
+      "da": "Самаре",
+      "pr": "Самаре",
+      "ro": "Самары",
+      "su": "Самара",
+      "tv": "Самарой",
+      "vi": "в Самару"
+    }
   }
 ]
