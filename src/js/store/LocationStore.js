@@ -38,22 +38,34 @@ export class LocationStore {
 
         const [countries, cities, airlines] = response;
 
-        this.countries = countries.reduce((acc, country) => {
+        // Первым инициализируем страны так как нам нужны коды стран для городов
+        this.countries = this._serializeCountries(countries);
+        this.cities = this._serializeCities(cities);
+        this.airlines = this._serializeAirlines(airlines);
+
+        return response;
+    }
+
+    _serializeCountries(countries) {
+        return countries.reduce((acc, country) => {
             const objCountry = new CountryDto(country);
             acc[objCountry.code] = objCountry;
             return acc;
         }, {});
+    }
 
-        this.cities = cities.reduce((acc, city) => {
+    _serializeCities(cities) {
+        return cities.reduce((acc, city) => {
             const objCity = new CityDto(city);
-            objCity.setCountryName(this.countries[objCity.countryCode].name);
+            objCity.setCountryName(this.countries[objCity.countryCode]?.name);
             acc[objCity.code] = objCity;
 
             return acc;
         }, {});
+    }
 
-
-        this.airlines = airlines.reduce((acc, airline) => {
+    _serializeAirlines(airlines) {
+        return airlines.reduce((acc, airline) => {
             const airlineObj = new AirlineDto(airline);
             if (airlineObj.code) {
                 acc[airlineObj.code] = airlineObj;
@@ -61,8 +73,6 @@ export class LocationStore {
 
             return acc;
         }, {});
-
-        return response;
     }
 
     getCities() {
