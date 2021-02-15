@@ -1,4 +1,4 @@
-import AirlineDto from "../AirlineDto";
+import AirlineDto from "@/Dto/AirlineDto";
 
 const obj = {
     code: "MSK",

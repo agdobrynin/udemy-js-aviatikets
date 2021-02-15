@@ -10,4 +10,7 @@ module.exports = {
         "^.+\\.(js|jsx)?$": "babel-jest"
     },
     verbose: true,
+    moduleNameMapper: {
+        "^@/(.*)$": "<rootDir>/src/js/$1",
+    }
 };

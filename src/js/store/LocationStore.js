@@ -6,7 +6,7 @@ import CountryDto from "@/Dto/CountryDto";
 import FlightCardDto from "@/Dto/FlightCardDto";
 import Config from "@/config";
 
-class LocationStore {
+export class LocationStore {
     /**
      *
      * @param {Api} api
