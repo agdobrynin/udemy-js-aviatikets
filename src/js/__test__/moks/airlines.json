@@ -1,0 +1,23 @@
+[
+  {
+    "name": null,
+    "code": "DN",
+    "name_translations": {
+      "en": "Norwegian Air"
+    }
+  },
+  {
+    "name": "Белавиа",
+    "code": "B2",
+    "name_translations": {
+      "en": "Belavia"
+    }
+  },
+  {
+    "name": "Air Iceland",
+    "code": "NY",
+    "name_translations": {
+      "en": "Air Iceland"
+    }
+  }
+]

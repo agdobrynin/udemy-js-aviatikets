@@ -1,0 +1,23 @@
+[
+  {
+    "country_code": "ID",
+    "code": "JKT",
+    "coordinates": {
+      "lat": -6.211544,
+      "lon": 106.845172
+    },
+    "name": "Джакарта",
+    "time_zone": "Asia/Jakarta",
+    "name_translations": {
+      "en": "Jakarta"
+    },
+    "cases": {
+      "da": "Джакарте",
+      "pr": "Джакарте",
+      "ro": "Джакарты",
+      "su": "Джакарта",
+      "tv": "Джакартой",
+      "vi": "в Джакарту"
+    }
+  }
+]
