@@ -8,6 +8,8 @@ import pricesCheap from "@/__test__/moks/prices.cheap.json";
 import CountryDto from "@/Dto/CountryDto";
 import CityDto from "@/Dto/CityDto";
 import AirlineDto from "@/Dto/AirlineDto";
+import TicketsRequestDto from "@/Dto/TicketsRequestDto";
+import { currenciesCode } from "@/store/CurrenciesStore";
 
 
 describe("Test LocationStore class base function", () => {
@@ -63,6 +65,7 @@ describe("Test async method", () => {
         cities: ()  => Promise.resolve(cities),
         countries: () => Promise.resolve(countries),
         airlines: () => Promise.resolve(airlines),
+        prices: () => Promise.resolve(pricesCheap),
     };
 
     let store;
@@ -100,8 +103,29 @@ describe("Test async method", () => {
     });
 
     it("Test async method fetchTickets and result DTO FlightCardDto", async ()=> {
-        // TODO описать ответ от API в json.
-        console.log("origin=KUF&destination=PRG&depart_date=2021-02&return_date=2021-02&currency=USD");
-        console.log(pricesCheap);
+        const dateDeparture = new Date("2021-02-15");
+        const dateReturn = new Date("2021-02-28");
+        const requestDto = new TicketsRequestDto("KUF", "BAK", dateDeparture, dateReturn, "usd");
+        const flightCardResults = await store.fetchTickets(requestDto);
+        const currenciesCodeKeys = Object.keys(currenciesCode);
+
+        for(const flightCardDto of flightCardResults) {
+            /** @type {FlightCardDto} flightCardDto */
+            expect(flightCardDto.getDepartureCity()).toBe(store.getCities()["KUF"].getFullName());
+            expect(flightCardDto.getDestinationCity()).toBe(store.getCities()["BAK"].getFullName());
+            expect(flightCardDto.getAirLine()).toBeInstanceOf(AirlineDto);
+            expect(["SU", "UT"]).toContain(flightCardDto.getAirLine().code);
+
+            expect(flightCardDto.getDepartureDate()).toBeInstanceOf(Date);
+            expect(flightCardDto.getReturnDate()).toBeInstanceOf(Date);
+            expect(flightCardDto.getExpireDate()).toBeInstanceOf(Date);
+            expect(flightCardDto.getExpireDate()).toBeInstanceOf(Date);
+
+            expect(flightCardDto.flightNumber).toBeGreaterThanOrEqual(1);
+            expect(flightCardDto.price).toBeGreaterThanOrEqual(10);
+            expect(flightCardDto.transfers).toBeGreaterThanOrEqual(0);
+
+            expect(currenciesCodeKeys).toContain(flightCardDto.currency.toUpperCase());
+        }
     });
 });
