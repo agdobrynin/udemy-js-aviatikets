@@ -1,10 +1,10 @@
 import LocationStore, {LocationStore as LocationStoreClass} from "@/store/LocationStore";
 import Cache from "@/services/Cache";
 import Api from "@/services/Api";
-import cities from "@/__test__/moks/cities.json";
-import countries from "@/__test__/moks/countries.json";
-import airlines from "@/__test__/moks/airlines.json";
-import pricesCheap from "@/__test__/moks/prices.cheap.json";
+import cities from "@/__test__/mocks/cities.json";
+import countries from "@/__test__/mocks/countries.json";
+import airlines from "@/__test__/mocks/airlines.json";
+import pricesCheap from "@/__test__/mocks/prices.cheap.json";
 import CountryDto from "@/Dto/CountryDto";
 import CityDto from "@/Dto/CityDto";
 import AirlineDto from "@/Dto/AirlineDto";

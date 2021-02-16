@@ -1,5 +1,5 @@
 import CityDto from "@/Dto/CityDto";
-import cities from "@/__test__/moks/cities.json";
+import cities from "@/__test__/mocks/cities.json";
 
 describe("Test City Dto class", () => {
     let city, obj;

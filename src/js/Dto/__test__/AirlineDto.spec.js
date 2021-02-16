@@ -1,5 +1,5 @@
 import AirlineDto from "@/Dto/AirlineDto";
-import airlines from "@/__test__/moks/airlines.json";
+import airlines from "@/__test__/mocks/airlines.json";
 
 describe("Test Airline Dto class", () => {
 
