@@ -102,7 +102,7 @@ describe("Test async method", () => {
         expect(airlineDto.getLogoUrl()).toEqual(expect.stringMatching(/\/100\/100\/SU\.png$/));
     });
 
-    it("Test async method fetchTickets and result DTO FlightCardDto", async ()=> {
+    it("fetchTickets and result DTO FlightCardDto", async ()=> {
         const dateDeparture = new Date("2021-02-15");
         const dateReturn = new Date("2021-02-28");
         const requestDto = new TicketsRequestDto("KUF", "BAK", dateDeparture, dateReturn, "usd");
