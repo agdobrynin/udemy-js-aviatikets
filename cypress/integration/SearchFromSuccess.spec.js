@@ -1,12 +1,15 @@
 describe("Form search success", () => {
-    beforeEach(() => {
+    before(() => {
         cy.intercept('GET', "/countries", {fixture: "countries.json"}).as("getCountries");
         cy.intercept('GET', "/cities", {fixture: "cities.json"}).as("getCities");
         cy.intercept('GET', "/airlines", {fixture: "airlines.json"}).as("getAirlines");
-        cy.intercept('GET', "/prices/cheap", {fixture: "prices.cheap.json"}).as("cheap");
 
         cy.visit("http://localhost:9000");
         cy.wait(["@getCountries", "@getCities", "@getAirlines"]);
+    });
+
+    beforeEach(() => {
+        cy.intercept('GET', "/prices/cheap", {fixture: "prices.cheap.json"}).as("pricesCheap");
     });
 
     it("Success search and Flight Cards is correct", () => {
@@ -18,10 +21,11 @@ describe("Form search success", () => {
         cy.get("[name=city-destination]").as("destinationCity");
         cy.get("#aviatikets-search-result").as("searchResult");
 
-        cy.get("@originCity").type(originCityTitle);
-        cy.get("@destinationCity").type(destinationCityTitle);
-        cy.get("[data-hook=searchForm]").submit().then(async () => {
-            cy.wait("@cheap");
+        cy.get("@searchResult").then((el) => el.empty());
+        cy.get("@originCity").clear().type(originCityTitle);
+        cy.get("@destinationCity").clear().type(destinationCityTitle);
+        cy.get("[data-hook=searchForm]").submit().then(() => {
+            cy.wait("@pricesCheap");
             cy.get("@searchResult").get(".flightCard").then((flightCards) => {
                 cy.wrap(flightCards).its('length').should("equal", 3);
 
@@ -63,14 +67,15 @@ describe("Form search success", () => {
         cy.get("[data-target=favorite-tickets]").as("favorites");
         cy.get("#favorite-tickets").as("favoritesResult");
 
-        cy.get("@originCity").type(originCityTitle);
-        cy.get("@destinationCity").type(destinationCityTitle);
+        cy.get("@searchResult").then((el) => el.empty());
+        cy.get("@originCity").clear().type(originCityTitle);
+        cy.get("@destinationCity").clear().type(destinationCityTitle);
 
         // Фавориты пусто.
         cy.get("@favorites").get(".flightCard").should("not.exist");
 
-        cy.get("[data-hook=searchForm]").submit().then(async () => {
-            cy.wait("@cheap");
+        cy.get("[data-hook=searchForm]").submit().then(() => {
+            cy.wait("@pricesCheap");
             cy.get("@searchResult").get(".flightCard:first .add-to-favorite-icon").click();
 
             // В фавориты добавлена карточка.
