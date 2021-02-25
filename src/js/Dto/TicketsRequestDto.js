@@ -16,7 +16,7 @@ export default class TicketsRequestDto {
 
     getRequestParams() {
 
-        const [dateDeparture = new Date(), dateReturn = new Date()] = [this._dateDeparture, this._dateReturn];
+        const [dateDeparture, dateReturn] = [this._dateDeparture ||  new Date(), this._dateReturn || new Date()];
 
         const [monthDeparture, monthReturn] = [
             `${dateDeparture.getMonth() + 1}`.padStart(2, "0"),
