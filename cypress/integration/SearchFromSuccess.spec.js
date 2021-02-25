@@ -60,8 +60,8 @@ describe("Form search success", () => {
         cy.get("[name=city-departure]").as("originCity");
         cy.get("[name=city-destination]").as("destinationCity");
         cy.get("#aviatikets-search-result").as("searchResult");
-        cy.get("[data-target=favorite-tickets]").as("favorites")
-        cy.get("#favorite-tickets").as("favoritesResult")
+        cy.get("[data-target=favorite-tickets]").as("favorites");
+        cy.get("#favorite-tickets").as("favoritesResult");
 
         cy.get("@originCity").type(originCityTitle);
         cy.get("@destinationCity").type(destinationCityTitle);
