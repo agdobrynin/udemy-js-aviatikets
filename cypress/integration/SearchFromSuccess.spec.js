@@ -61,6 +61,7 @@ describe("Form search success", () => {
         cy.get("[name=city-destination]").as("destinationCity");
         cy.get("#aviatikets-search-result").as("searchResult");
         cy.get("[data-target=favorite-tickets]").as("favorites")
+        cy.get("#favorite-tickets").as("favoritesResult")
 
         cy.get("@originCity").type(originCityTitle);
         cy.get("@destinationCity").type(destinationCityTitle);
@@ -78,12 +79,12 @@ describe("Form search success", () => {
 
             // Убрать из фаворитов первую карточку.
             cy.get("@favorites").click();
-            cy.get("#favorite-tickets").should("be.visible");
-            cy.get("#favorite-tickets .flightCard:first .remove-from-favorite-icon").click();
-            cy.get("#favorite-tickets .flightCard").should("not.exist");
+            cy.get("@favoritesResult").should("be.visible");
+            cy.get("@favoritesResult").find(".flightCard:first .remove-from-favorite-icon").click();
+            cy.get("@favoritesResult").find(".flightCard").should("not.exist");
             cy.get("#toast-container .toast").contains("Рейс удален из избранного");
             cy.get(".sidenav-overlay").click();
-            cy.get("#favorite-tickets").should("be.not.visible");
+            cy.get("@favoritesResult").should("be.not.visible");
         });
     });
 });
