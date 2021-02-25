@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "webpack --mode=production",
-    "test": "jest",
-    "test:coverage": "jest --coverage --color",
+    "jest": "jest",
+    "jest:coverage": "jest --coverage --color",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },

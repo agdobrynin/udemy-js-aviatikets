@@ -15,9 +15,14 @@ npm install
 npm run dev
 ```
 
-### Run test
+### Run Unit Tests
 ```bash
-npm run test
+npm run jest
+```
+
+### Run Unit Test and show test coverage
+```bash
+npm run jest:coverage
 ```
 
 ### Run e2e test with browser (visual)
