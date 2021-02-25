@@ -1,5 +1,5 @@
 describe("Form", () => {
-    beforeEach(() => {
+    before(() => {
         cy.intercept('GET', "/countries", { fixture: "countries.json"}).as("getCountries");
         cy.intercept('GET', "/cities", { fixture: "cities.json"}).as("getCities");
         cy.intercept('GET', "/airlines", { fixture: "airlines.json"}).as("getAirlines");
