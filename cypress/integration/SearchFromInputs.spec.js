@@ -15,6 +15,8 @@ describe("Form", () => {
     it("Favorite menu", () => {
         cy.get("[data-target=favorite-tickets]").click().then(() => {
             cy.get("#favorite-tickets").should("be.visible");
+            cy.get(".sidenav-overlay").click();
+            cy.get("#favorite-tickets").should("be.not.visible");
         });
     });
 
@@ -24,7 +26,7 @@ describe("Form", () => {
 
         const cityOrigin = "Самара,";
         const foundCityOrigin = "Самара, Россия";
-        cy.get("@originCity").type(cityOrigin).then((el) => {
+        cy.get("@originCity").clear().type(cityOrigin).then((el) => {
             const autocompleteId = el.attr("data-target");
 
             cy.get(`ul#${autocompleteId} li span.highlight`)
@@ -36,7 +38,7 @@ describe("Form", () => {
 
         const destOrigin = "Баку,";
         const foundCityDestOrigin = "Баку, Азербайджан";
-        cy.get("@destinationCity").type(destOrigin).then((el) => {
+        cy.get("@destinationCity").clear().type(destOrigin).then((el) => {
             const autocompleteId = el.attr("data-target");
             cy.get(`ul#${autocompleteId} li span.highlight`)
                 .should("contain.text", destOrigin)
@@ -70,7 +72,7 @@ describe("Form", () => {
                     cy.get("@datePickerModal").then((elDatePicker) => {
                         const selectedMonth = elDatePicker[0].querySelector("select.orig-select-month option[selected]").text;
                         const dateAsString = `${selectedMonth}, ${firstDayInDatePicker.dataset.year}`;
-                        // Выбрать дату на первом каледнаре
+                        // Выбрать дату на первом календаре
                         el.click();
                         cy.get("@datePickerModal").should("be.not.visible");
 
