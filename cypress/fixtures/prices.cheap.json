@@ -1,0 +1,40 @@
+{
+  "success": true,
+  "data": {
+    "2021-02-19": {
+      "origin": "KUF",
+      "destination": "BAK",
+      "price": 332,
+      "transfers": 2,
+      "airline": "SU",
+      "flight_number": 9009,
+      "departure_at": "2021-02-19T05:25:00Z",
+      "return_at": "2021-02-25T02:20:00Z",
+      "expires_at": "2021-02-18T06:58:15Z"
+    },
+    "2021-02-20": {
+      "origin": "KUF",
+      "destination": "BAK",
+      "price": 359,
+      "transfers": 3,
+      "airline": "SU",
+      "flight_number": 1082,
+      "departure_at": "2021-02-20T10:45:00Z",
+      "return_at": "2021-02-28T18:50:00Z",
+      "expires_at": "2021-02-17T22:16:13Z"
+    },
+    "2021-02-21": {
+      "origin": "KUF",
+      "destination": "BAK",
+      "price": 390,
+      "transfers": 2,
+      "airline": "UT",
+      "flight_number": 438,
+      "departure_at": "2021-02-21T05:25:00Z",
+      "return_at": "2021-02-25T02:20:00Z",
+      "expires_at": "2021-02-17T17:42:32Z"
+    }
+  },
+  "error": "",
+  "currency": "usd"
+}
