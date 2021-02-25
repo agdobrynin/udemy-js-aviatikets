@@ -20,10 +20,16 @@ npm run dev
 npm run test
 ```
 
-### Run e2e test
+### Run e2e test with browser (visual)
 ```bash
 npm run cypress:open
 ```
+
+### Run e2e test with console
+```bash
+npm run cypress:run
+```
+
 
 ### Build for production mode
 ```bash

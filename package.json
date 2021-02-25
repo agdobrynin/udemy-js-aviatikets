@@ -8,7 +8,8 @@
     "build": "webpack --mode=production",
     "test": "jest",
     "test:coverage": "jest --coverage --color",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "keywords": [],
   "author": "",
