@@ -15,6 +15,10 @@ npm install
 npm run dev
 ```
 
+### Build production app
+```bash
+npm run prod
+```
 ### Run Unit Tests
 ```bash
 npm run jest

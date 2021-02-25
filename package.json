@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack --mode=production",
+    "prod": "webpack --mode=production",
     "jest": "jest",
     "jest:coverage": "jest --coverage --color",
     "cypress:open": "cypress open",
