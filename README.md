@@ -5,6 +5,8 @@ https://www.udemy.com/course/modern-javascript-from-beginning/
 
 [Live demo](https://agdobrynin.github.io/udemy-js-aviatikets/dist/)
 
+Unit test and E2E test with cypress
+
 ## Installation
 ```bash
 npm install
